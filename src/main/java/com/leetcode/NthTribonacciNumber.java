@@ -21,10 +21,10 @@ public class NthTribonacciNumber {
         list.add(1);
         list.add(1);
 
-        int idx = 3;
+        int idx = 3;    // 시작 인덱스
 
-        while(idx <= n){
-            int val = list.get(idx-3)+list.get(idx-2)+list.get(idx-1);
+        while(idx <= n){    // n번째 항까지 피보나치 연산 수행
+            int val = list.get(idx-3)+list.get(idx-2)+list.get(idx-1);  // 앞의 3개 항 더하기
             list.add(val);
 
             idx++;
