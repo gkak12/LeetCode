@@ -1,5 +1,9 @@
 package com.leetcode;
 
+/**
+ * https://leetcode.com/problems/house-robber/description/?envType=study-plan-v2&envId=leetcode-75
+ */
+
 import java.util.Arrays;
 
 public class HouseRobber {
@@ -8,7 +12,8 @@ public class HouseRobber {
 //        int[] nums = {1,2,3,1};
 //        int[] nums = {2,7,9,3,1};
 //        int[] nums = {3,2,1,5,0,2};
-        int[] nums = {2,3,1,1,1,5,1};
+//        int[] nums = {2,3,1,1,1,5,1};
+        int[] nums = {3,5,0,0,0,0};
 
         int result = rob(nums);
         System.out.println(result);
