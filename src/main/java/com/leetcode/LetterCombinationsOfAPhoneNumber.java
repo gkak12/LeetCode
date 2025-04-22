@@ -32,14 +32,36 @@ public class LetterCombinationsOfAPhoneNumber {
             return Arrays.stream(map.get(digits)).toList();
         }
 
-        String[] sArr = digits.split("");   // 입력한 숫자를 문자열 배열로 전환 
-        result = search(sArr, map);             // 입력한 숫자 순서대로 조합 추출
+        String[] sArr = digits.split("");   // 입력받은 숫자를 문자열 배열로 전환
+        result = searchStack(sArr, map);        // 입력받은 숫자 순서대로 조합 추출(스택)
         Collections.sort(result);               // 조합 오름차순 정렬
+
+        List<String> list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        searchRecursive(sArr, map, list, sb, 0);        // 입력받은 숫자 순서대로 조합 추출(재귀)
+        Collections.sort(list);                             // 조합 오름차순 정렬
+        result = list;
 
         return result;
     }
 
-    public static List<String> search(String[] sArr, Map<String, String[]> map) {
+    public static void searchRecursive(String[] sArr, Map<String, String[]> map, List<String> list, StringBuilder sb, int idx) {
+        if(sb.length() == sArr.length){     // sb 길이가 입력받은 숫자 길이와 같은 경우 재귀 종료
+            list.add(sb.toString());        // 현재 sb 리스트에 추가
+            return;
+        }
+
+        String s_key = sArr[idx];           // 현재 인덱스에 위치한 숫자
+        String[] s_arr = map.get(s_key);    // 현재 숫자의 문자열 배열
+
+        for(String s : s_arr){  // 문자열 배열 조합 실행
+            sb.append(s);       // 문자열 배열을 sb에 추가
+            searchRecursive(sArr, map, list, sb, idx+1);    // 입력받은 다음 숫자 탐색
+            sb.deleteCharAt(sb.length()-1);     // 기존에 추가한 문자를 sb에서 제거, 백트래킹 실행
+        }
+    }
+
+    public static List<String> searchStack(String[] sArr, Map<String, String[]> map) {
         List<String> list = new ArrayList<>();
         String sKey = sArr[0];              // 첫번째 숫자
         String[] numArr = map.get(sKey);    // 첫번째 숫자에 해당하는 문자열 배열
