@@ -1,5 +1,9 @@
 package com.leetcode;
 
+/**
+ * https://leetcode.com/problems/smallest-number-in-infinite-set/submissions/1650235487/?envType=study-plan-v2&envId=leetcode-75
+ */
+
 import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Queue;
