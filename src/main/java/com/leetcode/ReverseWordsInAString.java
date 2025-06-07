@@ -1,5 +1,9 @@
 package com.leetcode;
 
+/**
+ * https://leetcode.com/problems/reverse-words-in-a-string/description/?envType=study-plan-v2&envId=leetcode-75
+ */
+
 public class ReverseWordsInAString {
 
     public static void main(String[] args) {
@@ -16,7 +20,7 @@ public class ReverseWordsInAString {
         StringBuilder sb = new StringBuilder();
 
         for(int i = sArr.length-1; i >= 0; i--){
-            if(sArr[i].equals("")){
+            if(sArr[i].isEmpty()){
                 continue;
             }
 
