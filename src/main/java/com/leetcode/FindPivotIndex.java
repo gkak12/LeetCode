@@ -1,5 +1,9 @@
 package com.leetcode;
 
+/**
+ * https://leetcode.com/problems/find-pivot-index/description/?envType=study-plan-v2&envId=leetcode-75
+ */
+
 public class FindPivotIndex {
 
     public static void main(String[] args) {
