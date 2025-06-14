@@ -4,10 +4,7 @@ package code.java;
  * https://leetcode.com/problems/keys-and-rooms?envType=study-plan-v2&envId=leetcode-75
  */
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 public class KeysAndRooms {
 
@@ -33,7 +30,7 @@ public class KeysAndRooms {
     public static boolean canVisitAllRooms(List<List<Integer>> rooms) {
         Set<Integer> set = new HashSet<>();
 
-        for(int i = 0; i < rooms.size(); i++){  // 방문 가능한 전체 방 번호 Set
+        for(int i = 0; i < rooms.size(); i++){  // 방문 해야 할 전체 방 번호 Set
             set.add(i);
         }
 
@@ -45,8 +42,8 @@ public class KeysAndRooms {
             Integer currRoom = stack.pop();
             visitLog[currRoom] = true;      // 현재 방 방문여부 수정
 
-            if(set.contains(currRoom)){     // 현재 방이 방문한 방인 경우
-                set.remove(currRoom);
+            if(set.contains(currRoom)){     // 현재 방이 방문해야 할 방인 경우
+                set.remove(currRoom);       // set에서 제거
             }
 
             List<Integer> currKeys = rooms.get(currRoom);   // 현재 방에 있는 키 목록
@@ -58,7 +55,7 @@ public class KeysAndRooms {
             }
         }
 
-        boolean result = set.isEmpty() ? true : false;  // 모든 방 방문여부 확인
+        boolean result = set.isEmpty();  // 모든 방 방문여부 확인
         return result;
     }
 }

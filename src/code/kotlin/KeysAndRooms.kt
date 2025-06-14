@@ -28,7 +28,7 @@ fun main(){
 fun canVisitAllRooms(rooms: List<List<Int>>): Boolean {
     val set = mutableSetOf<Int>()
 
-    for(i in rooms.indices){    // 방문 가능한 전체 방 번호 Set
+    for(i in rooms.indices){    // 방문 해야 할 전체 방 번호 Set
         set.add(i)
     }
 
@@ -40,8 +40,8 @@ fun canVisitAllRooms(rooms: List<List<Int>>): Boolean {
         val currRoom = stack.pop()
         visitLog[currRoom] = true   // 현재 방 방문여부 수정
 
-        if(set.contains(currRoom)){     // 현재 방이 방문한 방인 경우
-            set.remove(currRoom)
+        if(set.contains(currRoom)){     // 현재 방이 방문해야 할 방인 경우
+            set.remove(currRoom)        // set에서 제거
         }
 
         val currKeys = rooms[currRoom]  // 현재 방에 있는 키 목록
@@ -53,6 +53,6 @@ fun canVisitAllRooms(rooms: List<List<Int>>): Boolean {
         }
     }
 
-    val result = set.isEmpty()
+    val result = set.isEmpty()  // 모든 방 방문여부 확인
     return result;
 }
