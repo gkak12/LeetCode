@@ -1,5 +1,9 @@
 package code.kotlin
 
+/**
+ * https://leetcode.com/problems/move-zeroes/?envType=study-plan-v2&envId=leetcode-75
+ */
+
 fun main(){
 //    val nums = intArrayOf(0, 1, 0, 3, 12)
 //    val nums = intArrayOf(0)
