@@ -31,13 +31,13 @@ fun asteroidCollision(asteroids: IntArray): IntArray {
             var flag = 1    // 소행성 충돌 결과
 
             while(leftStack.isNotEmpty()){  // 왼쪽 방향 스택이 비어있지 않을 때까지 루프 실행
-                val nCurr = leftStack.removeLast()  // 왼쪽 방향 소행성 스택에서 소행성 추출
+                val leftCurr = leftStack.removeLast()  // 왼쪽 방향 소행성 스택에서 소행성 추출
 
-                if(asteroids[i] == nCurr.absoluteValue){    // 현재 소행성 방향과 왼쪽 소행성 방향 크기가 같은 경우
+                if(asteroids[i] == leftCurr.absoluteValue){    // 현재 소행성과 왼쪽 소행성 크기가 같은 경우
                     flag = 0    // 소행성 충돌 결과 0 설정
                     break       // 루프 종료
-                } else if(asteroids[i] < nCurr.absoluteValue){
-                    leftStack.addLast(nCurr)
+                } else if(asteroids[i] < leftCurr.absoluteValue){   // 현재 소행성이 왼쪽 소행성 보다 작은 경우
+                    leftStack.addLast(leftCurr)     // 왼쪽 방향 스택에 왼쪽 소행성 다시 저장
                     flag = -1   // 소행성 충돌 결과 -1 설정
                     break       // 루프 종료
                 }
@@ -49,18 +49,18 @@ fun asteroidCollision(asteroids: IntArray): IntArray {
         }
     }
 
-    val result = IntArray(leftStack.size+rightStack.size)   // 소행성 출돌 후 배열
+    val arr = IntArray(leftStack.size+rightStack.size)   // 소행성 출돌 후 배열
     var idx = 0
 
     while(leftStack.isNotEmpty()){  // 왼쪽 소행성 방향 배열에 저장
-        result[idx] = leftStack.removeLast()
+        arr[idx] = leftStack.removeLast()
         idx++
     }
 
     while(rightStack.isNotEmpty()){ // 오른쪽 소행성 방향 배열에 저장
-        result[idx] = rightStack.removeLast()
+        arr[idx] = rightStack.removeLast()
         idx++
     }
 
-    return result
+    return arr
 }
