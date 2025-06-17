@@ -1,5 +1,9 @@
 package code.java;
 
+/**
+ * https://leetcode.com/problems/asteroid-collision/submissions/1666998376/?envType=study-plan-v2&envId=leetcode-75
+ */
+
 import java.util.Arrays;
 import java.util.Stack;
 
