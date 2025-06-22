@@ -10,7 +10,8 @@ public class ZigzagConversion {
         String s = "PAYPALISHIRING";
         int numRows = 3;
 
-        convert(s, numRows);
+        String result = convert(s, numRows);
+        System.out.println(result);
     }
 
     public static String convert(String s, int numRows) {
@@ -19,7 +20,7 @@ public class ZigzagConversion {
         }
 
         char[][] arr = new char[numRows][s.length()];
-        boolean flag = true; // true: 아래방향, false: 사선방향
+        boolean flag = true; // true: 아래 방향, false: 대각선 방향
         int row = 0;
         int col = 0;
 
@@ -27,15 +28,15 @@ public class ZigzagConversion {
             char c = s.charAt(idx);
             arr[row][col] = c;
 
-            if (row == 0) { // 수직방향으로 전환
+            if (row == 0) { // 아래 방향으로 전환
                 flag = true;
-            } else if (row == numRows - 1) { // 사선방향으로 전환
+            } else if (row == numRows - 1) { // 대각선 방향으로 전환
                 flag = false;
             }
 
-            if (flag) { // 수직방향
+            if (flag) { // 아래 방향
                 row++;
-            } else { // 사선방향
+            } else { // 대각선 방향
                 row--;
                 col++;
             }
@@ -47,7 +48,7 @@ public class ZigzagConversion {
             sb.append(tmp);
         }
 
-        String res = sb.toString().replaceAll("\0", "");
-        return res;
+        String result = sb.toString().replaceAll("\0", "");
+        return result;
     }
 }
