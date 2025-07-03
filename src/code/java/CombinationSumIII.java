@@ -47,7 +47,8 @@ public class CombinationSumIII {
         int startNum = list.getLast();   // 리스트의 마지막 숫자를 시작 숫자로 설정
 
         for(int i = startNum ; i < 10 ; i++){
-            if(!list.contains(i) && list.size() < k && sum+i <= n){ // 다음 숫자가 중복되지 않았고, 리스트 사이즈가 k 보다 작고, 다음 숫자를 더한 값이 n 보다 작은 경우
+            // 다음 숫자가 중복되지 않았고, 리스트 사이즈가 k 보다 작고, 다음 숫자를 더한 값이 n 보다 작은 경우
+            if(!list.contains(i) && list.size() < k && sum+i <= n){
                 list.add(i);                        // 다음 숫자 추가
                 search(k, n, list, result);         // 탐색 수행
                 list.removeLast();                  // 추가한 숫자 제거(백트래킹 수행)
