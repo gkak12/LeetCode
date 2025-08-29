@@ -5,12 +5,14 @@ package code.kotlin
  */
 
 fun main() {
-    // val str1 = "ABCABC"
-    // val str2 = "ABC"
-    // val str1 = "ABABAB"
-    // val str2 = "ABAB"
-    val str1 = "LEET"
-    val str2 = "CODE"
+//    val str1 = "ABCABC"
+//    val str2 = "ABC"
+//    val str1 = "ABABAB"
+//    val str2 = "ABAB"
+//    val str1 = "LEET"
+//    val str2 = "CODE"
+    val str1 = "ABC"
+    val str2 = "ABCABE"
 
     val res = gcdOfStrings(str1, str2)
     println("res: $res")
@@ -32,13 +34,15 @@ fun gcdOfStrings(str1: String, str2: String): String {
     return str1.substring(0, gcd)   // 공통 문자열 리턴
 }
 
-fun getGcd(a: Int, b: Int): Int {   // 유클리드 알고리즘 사용해서 최대공약수 조회
-    var x = a
-    var y = b
+fun getGcd(num1: Int, num2: Int): Int {   // 유클리드 알고리즘 사용해서 최대공약수 조회
+    var x = num1
+    var y = num2
+
     while (y != 0) {
         val temp = y
         y = x % y
         x = temp
     }
+
     return x
 }
