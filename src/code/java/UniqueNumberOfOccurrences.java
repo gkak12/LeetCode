@@ -1,11 +1,11 @@
 package code.java;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * https://leetcode.com/problems/unique-number-of-occurrences/submissions/1865017737/?envType=study-plan-v2&envId=leetcode-75
  */
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class UniqueNumberOfOccurrences {
 
