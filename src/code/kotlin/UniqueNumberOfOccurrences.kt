@@ -16,17 +16,15 @@ fun main(){
 fun uniqueOccurrences(arr: IntArray): Boolean {
     val map = mutableMapOf<Int,Int>()   // 숫자별 개수 저장하는 Map
 
-    for(i in 0 until arr.size){     // 숫자별 개수 카운트
+    for(i in 0 until arr.size){     // 숫자별 개수 count
         val num = arr.get(i)
         val cnt = map.getOrDefault(num, 0) + 1
         map[num] = cnt
     }
 
-    val result = if (map.keys.size == map.values.toSet().size) {    // 숫자 종류 개수와 숫자별 개수가 같은 경우 true 리턴
-        true
-    } else {    // 그렇지 않은 경우 false 리턴
-        false
-    }
+    val setSize = map.values.toSet().size   // Map의 Value인 숫자별 개수를 Set으로 변환하고 Size 조회
+    val keySize = map.keys.size     // Map의 Key인 숫자 종류 개수 Size 조회
 
+    val result = setSize == keySize  // setSize와 keySize가 같은 경우 true 리턴, 그렇지 않으면 false 리턴
     return result
 }

@@ -19,9 +19,9 @@ public class UniqueNumberOfOccurrences {
     }
 
     public static boolean uniqueOccurrences(int[] arr) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();    // 숫자별 개수 저장하는 Map
 
-        for(int num : arr){
+        for(int num : arr){     // 숫자별 개수 count
             int cnt = map.getOrDefault(num, 0) + 1;
             map.put(num, cnt);
         }
