@@ -2,9 +2,13 @@ package code.kotlin
 
 import java.util.*
 
-class RecentCounter (
-    private val queue: Queue<Int> = LinkedList()    // 요청 시각을 저장하는 큐
-){
+class RecentCounter {
+
+    private val queue: Queue<Int>
+
+    constructor() {
+        this.queue = LinkedList()
+    }
 
     fun ping(t: Int): Int{
         queue.add(t)    // 현재 요청 시각을 큐에 저장
