@@ -14,17 +14,8 @@ fun main(){
 }
 
 fun reverseWords(s: String): String {
-    val sArr = s.split(" ")
-    val sb: StringBuilder = StringBuilder()
-
-    for(i in sArr.size-1 downTo 0){
-        if(sArr[i].isEmpty()){
-            continue
-        }
-
-        sb.append(sArr[i])
-        sb.append(" ")
-    }
-
-    return sb.toString().trim()
+    return s.trim()
+        .split(Regex("\\s+"))   // 공백 기준으로 문자열 리스트 생성
+        .reversed() // 리스트 현재 순서 반대로 뒤집기
+        .joinToString(" ")  // 리스트 요소 사이에 공백 추가한 뒤 리턴
 }
