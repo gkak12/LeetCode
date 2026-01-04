@@ -11,6 +11,8 @@ public class MinimumSizeSubarraySum {
 //        int[] nums = {1,4,4};
 //        int target = 11;
 //        int[] nums = {1,1,1,1,1,1,1,1};
+//        int target = 11;
+//        int[] nums = {1,2,3,4,5};
 
         int result = minSubArrayLen(target, nums);
         System.out.println(result);
@@ -25,7 +27,7 @@ public class MinimumSizeSubarraySum {
         while(leftIdx < nums.length && rightIdx < nums.length) {    // leftIdx와 rightIdx가 배열 길이보다 작은 경우 루프 실행
             sum += nums[rightIdx];  // sum에 rightIdx 값 추가
 
-            while(sum >= target) {  // sum이 target보다 크거나 같은 경우
+            while(sum >= target) {  // sum이 target보다 크거나 같은 경우 루프 실행
                 len = Math.min(len, rightIdx-leftIdx+1);    // len 갱신
                 sum -= nums[leftIdx];   // sum에서 leftIdx 값 삭제
                 leftIdx++;              // leftIdx 증가
