@@ -36,7 +36,7 @@ public class Combinations {
         for(int i = num ; i <= n ; i++){    // 숫자 탐색
             curr.add(i);    // 현재 숫자 추가
             search(i+1, depth+1, n, k, curr, list); // 현재 다음 숫자 탐색, 재귀 호출
-            curr.removeLast();  // 마지막에 추가한 현재 숫자 삭제
+            curr.removeLast();  // 마지막에 추가한 현재 숫자 제거
         }
     }
 }
