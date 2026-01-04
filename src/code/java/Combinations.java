@@ -11,6 +11,10 @@ public class Combinations {
     public static void main(String[] args) {
         int n = 4;
         int k = 2;
+//        int n = 1;
+//        int k = 1;
+//        int n = 5;
+//        int k = 2;
 
         List<List<Integer>> result = combine(n, k);
         System.out.println(result);
