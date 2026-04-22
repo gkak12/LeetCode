@@ -4,6 +4,8 @@ package code.java;
  * https://leetcode.com/problems/reverse-words-in-a-string/description/?envType=study-plan-v2&envId=leetcode-75
  */
 
+import java.util.*;
+
 public class ReverseWordsInAString {
 
     public static void main(String[] args) {
@@ -16,18 +18,9 @@ public class ReverseWordsInAString {
     }
 
     public static String reverseWords(String s) {
-        String[] sArr = s.split(" ");
-        StringBuilder sb = new StringBuilder();
+        List<String> words = Arrays.asList(s.trim().split("\\s+")); // 공백 기준으로 문자열 리스트 생성
+        Collections.reverse(words); // 리스트 현재 순서 반대로 뒤집기
 
-        for(int i = sArr.length-1; i >= 0; i--){
-            if(sArr[i].isEmpty()){
-                continue;
-            }
-
-            sb.append(sArr[i]);
-            sb.append(" ");
-        }
-
-        return sb.toString().trim();
+        return String.join(" ", words); // 리스트 요소 사이에 공백 추가한 뒤 리턴
     }
 }

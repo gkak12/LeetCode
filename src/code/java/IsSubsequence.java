@@ -18,21 +18,36 @@ public class IsSubsequence {
     }
 
     public static boolean isSubsequence(String s, String t) {
-        int sIdx = 0;   // 부분 문자열 인덱스
-        int tIdx = 0;   // 전체 문자열 인덱스
+        int sIdx = 0;
+        int tIdx = 0;
 
-        while(tIdx < t.length()) {
-            // 부분 문자열 인덱스가 부분 문자열 보다 작고, 부분 문자열 인덱스 원소와 전체 문자열 인덱스 원소가 같은 경우
-            if(sIdx < s.length() && s.charAt(sIdx) == t.charAt(tIdx)) {
+        while(sIdx < s.length() && tIdx < t.length()){
+            if(s.charAt(sIdx) == t.charAt(tIdx)) {
                 sIdx++;
             }
 
             tIdx++;
         }
 
-        boolean result = sIdx == s.length();    // 부분 문자열 다 탐색한 경우
-        return result;
+        return sIdx == s.length();
     }
+
+//    public static boolean isSubsequence(String s, String t) {
+//        int sIdx = 0;   // 부분 문자열 인덱스
+//        int tIdx = 0;   // 전체 문자열 인덱스
+//
+//        while(tIdx < t.length()) {
+//            // 부분 문자열 인덱스가 부분 문자열 보다 작고, 부분 문자열 인덱스 원소와 전체 문자열 인덱스 원소가 같은 경우
+//            if(sIdx < s.length() && s.charAt(sIdx) == t.charAt(tIdx)) {
+//                sIdx++;
+//            }
+//
+//            tIdx++;
+//        }
+//
+//        boolean result = sIdx == s.length();    // 부분 문자열 다 탐색한 경우
+//        return result;
+//    }
 
 //    public static boolean isSubsequence(String s, String t) {
 //        if(s.isEmpty()){    // s문자열이 공백인 경우
