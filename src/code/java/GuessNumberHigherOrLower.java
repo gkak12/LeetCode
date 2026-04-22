@@ -1,7 +1,7 @@
 package code.java;
 
 /**
- * https://leetcode.com/problems/guess-number-higher-or-lower/submissions/?envType=study-plan-v2&envId=leetcode-75
+ * https://leetcode.com/problems/guess-number-higher-or-lower/description/?envType=study-plan-v2&envId=leetcode-75
  */
 
 public class GuessNumberHigherOrLower {
