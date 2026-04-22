@@ -35,7 +35,7 @@ public class CanPlaceFlowers {
                 if(leftFlag && rightFlag){  // 왼쪽, 오른족 둘다 비어있는 경우, 꽃 심기
                     flowerbed[i] = 1;
                     n--;
-                    i++;    // 현재 기준 오른쪽은 인접해서 더이상 꽃을 심을 수 없기에 패스 
+                    i++;    // 현재 기준 오른쪽은 인접해서 더이상 꽃을 심을 수 없기에 패스
                 }
             }
         }
