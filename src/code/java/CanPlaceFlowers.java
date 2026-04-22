@@ -25,43 +25,18 @@ public class CanPlaceFlowers {
     }
 
     public static boolean canPlaceFlowers(int[] flowerbed, int n) {
-        int i = 0;
         int len = flowerbed.length;
 
-        while(i < len){
-            if(flowerbed[i] == 1){
-                i += 2;
-            } else {
-                int left = i-1;
-                int right = i+1;
+        for(int i = 0; i < len; i++){
+            if(flowerbed[i] == 0){  // 비어있는 경우
+                boolean leftFlag = i-1 >= 0 ? flowerbed[i-1] == 0 : true;   // 왼쪽이 비어있는지 확인
+                boolean rightFlag = i+1 < len ? flowerbed[i+1] == 0 : true; // 오른쪽아 비어있는지 확인
 
-                if(left < 0 && right >= len){
+                if(leftFlag && rightFlag){  // 왼쪽, 오른족 둘다 비어있는 경우, 꽃 심기
                     flowerbed[i] = 1;
                     n--;
-
-                    continue;
+                    i++;    // 현재 기준 오른쪽은 인접해서 더이상 꽃을 심을 수 없기에 패스 
                 }
-
-                if(left < 0 && flowerbed[right] == 0){
-                    flowerbed[i] = 1;
-                    n--;
-
-                    continue;
-                }
-
-                if(right >= len && flowerbed[left] == 0){
-                    flowerbed[i] = 1;
-                    n--;
-
-                    continue;
-                }
-
-                if(left >= 0 && right < len && flowerbed[left] == 0 && flowerbed[right] == 0){
-                    flowerbed[i] = 1;
-                    n--;
-                }
-
-                i++;
             }
         }
 
