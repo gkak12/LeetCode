@@ -7,9 +7,10 @@ package code.kotlin
 import kotlin.math.absoluteValue
 
 fun main(){
-    val asteroids = intArrayOf(5, 10, -5)
+//    val asteroids = intArrayOf(5, 10, -5)
 //    val asteroids = intArrayOf(8, -8)
 //    val asteroids = intArrayOf(10, 2, -5)
+    val asteroids = intArrayOf(3, 5, -6, 2, -1, 4)
 //    val asteroids = intArrayOf(-1, -1, -1)
 //    val asteroids = intArrayOf(1, 1, 1)
 //    val asteroids = intArrayOf(1, 2, 3, -4, -1, 5)
