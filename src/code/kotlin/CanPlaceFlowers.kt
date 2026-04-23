@@ -1,5 +1,9 @@
 package code.kotlin
 
+/**
+ * https://leetcode.com/problems/can-place-flowers/description/?envType=study-plan-v2&envId=leetcode-75
+ */
+
 fun main() {
 //    val flowerbed = intArrayOf(1, 0, 0, 0, 1)
 //    val n = 1
