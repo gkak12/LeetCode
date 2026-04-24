@@ -3,6 +3,12 @@ package code.kotlin
 fun main(){
     val nums = intArrayOf(1,2,3,4)
     val result = productExceptSelf(nums)
+//    val nums = intArrayOf(-1,1,0,-3,3)
+//    val result = productExceptSelf(nums)
+//    val nums = intArrayOf(0,0)
+//    val result = productExceptSelf(nums)
+//    val nums = intArrayOf(0,4,0)
+//    val result = productExceptSelf(nums)
 
     println(result)
 }
